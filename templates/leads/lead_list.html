@@ -16,13 +16,16 @@
     </style>
   </head>
   <body>
-    <h1>This is all or leads</h1>
+    <a href="/leads/create">Create a new lead</a>
+    <hr />
+    <h1>This is all our leads</h1>
     {% for lead in leads %}
         <div class="lead">
             <a href="/leads/{{ lead.pk }}">
                 {{ lead.first_name }}
                 {{ lead.last_name }}
             </a>
+            &nbsp;
             Age: {{ lead.age }}
         </div>
     {% endfor %}
