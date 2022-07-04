@@ -7,7 +7,7 @@
     <title>Home</title>
   </head>
   <body>
-    <a href="/leads">Go Back to leads</a>
+    <a href="{% url 'leads:lead-list' %}">Go Back to leads</a>
     <hr />
     <h1>This is details of {{ lead.first_name }}</h1>
     <p>Age of {{ lead.first_name }} is {{ lead.age }}</p>
@@ -16,5 +16,8 @@
     {% else %}
         <p>No Agent assigned yet</p>
     {% endif %}
+    <hr />
+    <a href="{% url 'leads:lead-update' lead.pk %}">Update</a>
+    <a href="{% url 'leads:lead-delete' lead.pk %}">Delete</a>
   </body>
 </html>
