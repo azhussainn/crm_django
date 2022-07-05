@@ -2,7 +2,16 @@ from django.core.mail import send_mail
 from django.shortcuts import reverse
 from django.views import generic
 from .models import Lead, Agent
-from .forms import LeadModelForm, LeadForm
+from .forms import LeadModelForm, LeadForm, CustomUserCreateForm
+
+
+
+class SignupView(generic.CreateView):
+    template_name = 'registration/signup.html'
+    form_class = CustomUserCreateForm
+
+    def get_success_url(self):
+        return reverse("login")
 
 
 
