@@ -35,6 +35,7 @@ class Lead(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     age = models.IntegerField(default=0)
+    organization = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     agent = models.ForeignKey(Agent, on_delete=models.SET_DEFAULT, default=None, null=True, blank=True)
 
     def __str__(self):
