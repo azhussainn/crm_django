@@ -11,6 +11,9 @@
             <h2 class="inline-flex items-center py-1 px-3 text-base mt-4 md:mt-0">
                 You are logged in: {{ request.user.username }}
             </h2>
+            {% if request.user.is_organizer %}
+                <a href="{% url 'agents:agent-list' %}" class="mr-3 inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Agents</a>
+            {% endif %} 
             <a href="{% url 'leads:lead-list' %}" class="mr-3 inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Leads</a>
             <a href="{% url 'logout' %}" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Logout</a>
         </nav>        

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <a href="{% url 'agents:agent-list' %}">Go Back to Agents</a>
+        <div class="container px-5 py-5 mx-auto">
+            <div class="lg:w-4/5 mx-auto flex flex-wrap">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+                <h2 class="text title-font text-gray-500 tracking-widest mb-5">Create a new Agent</h2>
+
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="h-10 bg-blue-900 px-10 border-1 inline-flex items-center justify-center text-gray-100 mt-4">
+                        Submit
+                    </button>
+                </form>
+        </div>
+    </section>
+{% endblock content %}
