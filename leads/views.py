@@ -88,6 +88,7 @@ class LeadUpdateView(OrganzierAndLoginRequiredMixin, generic.UpdateView):
 
 
 class LeadDeleteView(OrganzierAndLoginRequiredMixin, generic.DeleteView):
+    
     template_name = 'leads/lead_delete.html'
     
     def get_queryset(self):
@@ -96,4 +97,3 @@ class LeadDeleteView(OrganzierAndLoginRequiredMixin, generic.DeleteView):
 
     def get_success_url(self):
         return reverse("leads:lead-list")
-

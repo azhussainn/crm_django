@@ -1,11 +1,13 @@
 from django import forms
-from leads.models import Agent
-# from django.contrib.auth.forms import UserCreationForm, UsernameField
+from leads.models import User
 
 
 class AgentModelForm(forms.models.ModelForm):
     class Meta:
-        model = Agent
+        model = User
         fields = (
-            'user',
+            'email',
+            'username',
+            'first_name',
+            'last_name'
         )
